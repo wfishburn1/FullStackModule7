@@ -7,7 +7,7 @@ const authController = require('../controllers/authentication');
 
 // define route for registration endpoint
 router 
-    .route('register')
+    .route('/register')
     .post(authController.register);
 
 
