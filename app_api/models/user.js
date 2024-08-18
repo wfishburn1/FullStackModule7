@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema;({
     hash: String,
     salt: String
 });
-
+userSchema.plugin(passportLocalMongoose);
 mongoose.model('users', userSchema);
 
 // Method to set the password on this record.
@@ -46,6 +46,6 @@ userSchema.methods.generateJWT = function() {
     { expiresIn: '1h' }); //Token expires an hour from creation
     };
 
-userSchema.plugin(passportLocalMongoose);
+
 const User = mongoose.model('users', userSchema);
 module.exports = User;
