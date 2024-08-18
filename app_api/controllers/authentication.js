@@ -16,7 +16,7 @@ const register = async(req, res) => {
             password: '' // Start with empty password
         });
     
-    user.setPasword(req.body.password) // Set User password
+    user.setPassword(req.body.password) // Set User password
     const q = await user.save();
 
     if(!q)
